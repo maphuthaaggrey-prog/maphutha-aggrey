@@ -1,6 +1,6 @@
 {
   "name": "maphutha-aggrey",
-  "homepage": "https://maphuthaaggrey-prog.github.io/Aggrey/",
+  "homepage": "https://maphuthaaggrey-prog.github.io/maphutha-aggrey/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "eploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "react": "^19.0.0",
