@@ -17,9 +17,9 @@ export const projects = [
         id: 2,
         project: "Veteran Beatx",
         image: veteranbeatx,
-        link: "https://maphuthaaggrey-prog.github.io/veteranbeatx/",
+        link: "https://tinyurl.com/veteranbeatx",
         type: "Personal Music Website",
-        tools: "HTML - Javascript - CSS",
+        tools: "React Js - Javascript - CSS",
         description: `Collection of Veteran's latest beats, music productions, and projects. We are excited to share our art with you and hope you'll join us on this musical journey.`,
     },
     {
