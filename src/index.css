@@ -406,6 +406,10 @@ h5 {
     color: grey;
     padding: .4em 0;
 }
+.project-tools {
+    color: #4fbe62;
+
+}
 .project-desc {
     color: var(--tertiary);
     padding-bottom: 2em;

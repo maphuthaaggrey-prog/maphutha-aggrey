@@ -24,8 +24,11 @@ const Projects = () => {
                                             className="project-image"
                                         />
                                         <p className="project-name">{project.project}</p>
+                                        <p className="project-tools">{project.tools}</p>
                                         <p className="project-type">{project.type}</p>
                                         <p className="project-desc">{project.description}</p>
+                                        
+                                       
                                 
                             </div>
                         </a>

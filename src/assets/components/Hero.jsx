@@ -7,7 +7,7 @@ import React, { useState, useEffect } from "react";
 import cv from '../Data/CV MAPHUTHA AC.pdf'
 const Hero = () => {
 
-    const binaryText = "1101010101011101111010101"; 
+    const binaryText = "110101010101110111101010"; 
     const [displayText, setDisplayText] = useState("");
     const [index, setIndex] = useState(0);
   
@@ -23,7 +23,7 @@ const Hero = () => {
           }
         }, 70);
     
-        return () => clearTimeout(timer); // Cleanup timer
+        return () => clearTimeout(timer); 
       }, [index, binaryText]);
     
     return ( 
