@@ -1,3 +1,4 @@
+
 const About = () => {
     return ( 
         <section className="hero-about">
