@@ -39,9 +39,15 @@ const Skills = () => {
               <div className="progress" data-width="75%"></div>
             </div>
           </div>
+          <div className="skill">
+            <h3>Git</h3>
+            <div className="progress-bar">
+              <div className="progress" data-width="65%"></div>
+            </div>
+          </div>
 
           <div className="skill">
-            <h3>Github</h3>
+            <h3>Github </h3>
             <div className="progress-bar">
               <div className="progress" data-width="55%"></div>
             </div>
@@ -73,7 +79,13 @@ const Skills = () => {
           <div className="skill">
             <h3>React.js</h3>
             <div className="progress-bar">
-              <div className="progress" data-width="35%"></div>
+              <div className="progress" data-width="45%"></div>
+            </div>
+          </div>
+          <div className="skill">
+            <h3>Next js</h3>
+            <div className="progress-bar">
+              <div className="progress" data-width="15%"></div>
             </div>
           </div>
         </div>
