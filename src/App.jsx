@@ -5,6 +5,9 @@ import Skills from './assets/components/Skills'
 import Projects from './assets/components/Projects'
 import Footer from './assets/components/Footer'
 function App() {
+
+
+
   return (
     <>
           <Header />
