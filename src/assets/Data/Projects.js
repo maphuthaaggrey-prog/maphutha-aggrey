@@ -1,7 +1,10 @@
 import veteranbeatx from '../images/veteranbeatx.png'
 import majitamag from '../images/majitamag.png'
 import moments from '../images/moments.png'
-import limpopo from '../images/limpopo.png'
+import contella from '../images/contella.png'
+import respectmyhustle from '../images/respectmyhustle.png'
+import aaven from '../images/aaven.png'
+
 
 export const projects = [
     {
@@ -33,11 +36,30 @@ export const projects = [
     },
     {
         id: 4,
-        project: "Limpopo Fresh",
-        image: limpopo,
-        tools: "HTML - Javascript - CSS",
-        link: "https://maphuthaaggrey-prog.github.io/Limpopo-Fresh-Store/",
-        type: "E-Commerce Website",
-        description: "Limpopo Fresh Produce Market is a dynamic e-commerce platform focused on delivering fresh, locally sourced fruits, vegetables, and dairy products. Built with a responsive design and intuitive user interface",
+        project: "Contella",
+        image: contella,
+        link: "https://maphuthaaggrey-prog.github.io/contella/",
+        type: "Blog - Video Streaming",
+        tools: "React Js - Javascript - CSS",
+        description: `Platform for streaming SA content creators by embedding their YouTube videos, making it easier to discover their content in one place. It features a blog that highlights the latest trends among the new gen of SA and includes biographies that share their stories.`,
     },
+    {
+        id: 5,
+        project: "Respect My Hustle",
+        image: respectmyhustle,
+        link: "https://maphuthaaggrey-prog.github.io/freeze/",
+        type: "Personal Art Portfolio",
+        tools: "React Js - Javascript - CSS",
+        description: `Professional platform showcasing the creative work of a graphic designer focused on logo design, branding, and custom illustrations. The portfolio highlights Freeze’s ability to transform ideas into original visuals that capture the identity of brands, and businesses.`,
+    },
+    {
+        id: 6,
+        project: "Aaven",
+        image: aaven,
+        link: "https://maphuthaaggrey-prog.github.io/aaven/",
+        type: "Web Development Agency",
+        tools: "React Js - Javascript - CSS",
+        description: `Aaven is a creative web development studio focused on building modern, impactful digital experiences for South African creators and businesses. We design, develop, and launch online experiences tailored for the new generation."`,
+    },
+
 ]

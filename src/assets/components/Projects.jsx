@@ -27,14 +27,15 @@ const Projects = () => {
                                         <p className="project-tools">{project.tools}</p>
                                         <p className="project-type">{project.type}</p>
                                         <p className="project-desc">{project.description}</p>
-                                        
-                                       
-                                
                             </div>
                         </a>
                
                          ))}
+                         <div className="powered">
+                         </div>
                  </div>
+                 <p className="page-heading ">Powered: <a href="https://maphuthaaggrey-prog.github.io/aaven/" target='_blank'><p className="hero-logo"><span>Aa</span>ven</p></a></p>
+
             </div> 
         </section>   
 
