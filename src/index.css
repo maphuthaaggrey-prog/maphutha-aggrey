@@ -109,7 +109,7 @@ nav ul {
     z-index: 999;
     top: 0;
     right: 0;
-    height: 50vh;
+    height: 100vh;
     list-style: none;
     border-radius: 4px;
     backdrop-filter: blur(80px);
@@ -127,10 +127,13 @@ nav ul {
 nav ul li  {
         cursor: pointer; 
         margin: 2em 0;
+        border-bottom: 1px solid white;
+        padding-bottom: 1.4em;
 
         }
 nav ul li:nth-of-type(1) {
             margin-top: 0;
+            border: none;
             
         }
 nav ul li a {
@@ -628,6 +631,8 @@ footer .social-icons {
     }
     .navbar nav ul li {
         list-style: none;
+        border-bottom: none;
+        padding-bottom: o;
         display: flex;
         margin: auto;
         font-weight: normal;
