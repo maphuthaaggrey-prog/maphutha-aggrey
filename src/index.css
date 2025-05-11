@@ -380,7 +380,7 @@ h5 {
 .progress-bar {
     background-color: white;
     overflow: hidden;
-    height: 10px;
+    height: 13px;
     border-radius: 13px;
     width: 260px;
   }
@@ -435,7 +435,7 @@ h5 {
     cursor: pointer;
     transition: all .1s ease-in-out;
     border-radius: 30px;
-    background: rgba(73, 95, 165, 0.414) 
+    background: rgba(143, 188, 255, 0.164) 
 }
 .project:hover {
     transform: scale(1.01);
@@ -611,7 +611,6 @@ footer .social-icons {
     }
     a .logo {
         margin-left: 5em;
-        margin-top: 1;
     }
     .navbar nav ul {
         display: flex;
@@ -632,7 +631,7 @@ footer .social-icons {
     .navbar nav ul li {
         list-style: none;
         border-bottom: none;
-        padding-bottom: o;
+        padding-bottom: 0;
         display: flex;
         margin: auto;
         font-weight: normal;
