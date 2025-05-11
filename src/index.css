@@ -464,6 +464,7 @@ h5 {
 .project img:hover {
     transform: scale(1.04);
 }
+
 .project p {
     width: 80%;
     margin: auto;

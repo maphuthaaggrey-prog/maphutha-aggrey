@@ -1,5 +1,5 @@
 import veteranbeatx from '../images/veteranbeatx.png'
-import majitamag from '../images/majitamag.png'
+import majitamag from '../images/majitamonday.png'
 import moments from '../images/moments.png'
 import contella from '../images/contella.png'
 import respectmyhustle from '../images/respectmyhustle.png'
