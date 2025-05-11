@@ -7,7 +7,7 @@ const About = () => {
                 <div className="about-me ">
 
                     <div className="hero-story scroll">
-                        <p className="about-text ">I'm Aggrey Maphutha, a 23-year-old aspiring web developer from Ga-Masemola,
+                        <p className="about-text ">I'm Aggrey Maphutha, a 23-year-old aspiring software developer from Ga-Masemola,
                             Limpopo. I am currently in my final year at Nkangala TVET College, where I am pursuing a
                             qualification in Information Technology and Computer Science.
                         </p>

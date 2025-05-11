@@ -1,4 +1,4 @@
-import myPhoto from '../images/picture.png'
+import myPhoto from '../images/ChatGPT_Image_May_11__2025__12_19_18_AM-removebg-preview.png'
 import gitHub from '../images/icons8-github 1.png'
 import gMail from '../images/icons8-gmail (1) 1.png'
 import linkedIn from '../images/Vector.png'

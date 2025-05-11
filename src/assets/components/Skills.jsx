@@ -79,7 +79,7 @@ const Skills = () => {
           <div className="skill">
             <h3>React.js</h3>
             <div className="progress-bar">
-              <div className="progress" data-width="45%"></div>
+              <div className="progress" data-width="55%"></div>
             </div>
           </div>
           <div className="skill">

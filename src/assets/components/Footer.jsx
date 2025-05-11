@@ -71,8 +71,9 @@ const Footer = () => {
             action={contactScriptURL}
             method="POST"
           >
-            <p className="send-message">I'd Love to Hear From You</p>
+            <p className="send-message">Let's Connect!</p>
             <fieldset>
+              <div className="name-email">
               <label htmlFor="first-name">
                 Enter Your Name:
                 <input
@@ -99,7 +100,7 @@ const Footer = () => {
                   <p className="error-message">{errors.email}</p>
                 )}
               </label>
-
+              </div>
               {/* Phone Field */}
               <label htmlFor="phone">
                 Enter Phone Number:
