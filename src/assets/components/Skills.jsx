@@ -2,20 +2,21 @@ import React, { useEffect } from 'react';
 
 const Skills = () => {
   useEffect(() => {
-    // Wait for a slight delay to animate the width from 0% to the target value
+
     const progressBars = document.querySelectorAll('.progress');
     progressBars.forEach((element) => {
       const targetWidth = element.getAttribute('data-width');
-      element.style.width = '0'; // Start at 0
+      element.style.width = '0';
       setTimeout(() => {
-        element.style.width = targetWidth; // Animate to target width
-      }, 200); // Delay of 200ms to ensure smooth animation
+        element.style.width = targetWidth; 
+      }, 200);
     });
   }, []);
 
   return (
     <section className="about-hero">
-      <p className="page-heading" style={{ fontSize: '25px' }}>Skills</p>
+      <h5>SKILLS</h5>
+      <p className="page-heading" style={{ fontSize: '25px' }}>Technical Skills</p>
       <div className="divider-line"></div>
       <div className="progress-container">
         <div className="designer-skills">

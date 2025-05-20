@@ -71,7 +71,11 @@ const Footer = () => {
             action={contactScriptURL}
             method="POST"
           >
+                        <div className="available-for-work">
+                      <p><span></span>Avaibale for Work</p>
+                    </div>
             <p className="send-message">Let's Connect!</p>
+            <p className="about-text">I’m currently open to junior-level opportunities in Front-End Development and UI/UX Design. If you’re looking for someone passionate about building clean, user-friendly web experiences — let’s connect!</p>
             <fieldset>
               <div className="name-email">
               <label htmlFor="first-name">
@@ -101,19 +105,6 @@ const Footer = () => {
                 )}
               </label>
               </div>
-              {/* Phone Field */}
-              <label htmlFor="phone">
-                Enter Phone Number:
-                <input
-                  id="phone"
-                  name="phone"
-                  type="tel"
-                  placeholder="Example: 0765216787"
-                />
-                {errors.phone && (
-                  <p className="error-message">{errors.phone}</p>
-                )}
-              </label>
 
               {/* Message Field */}
               <label htmlFor="message">
@@ -151,7 +142,7 @@ const Footer = () => {
                     </div>
         </div>
         <div className="footer-bottom">
-          <p>&copy; 2025 Maphutha Aggrey. All rights reserved.</p>
+          <p>Designed and Developed by Maphutha Aggrey</p>
         </div>
       </footer>
     </>

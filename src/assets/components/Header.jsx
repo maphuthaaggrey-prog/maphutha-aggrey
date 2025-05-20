@@ -1,4 +1,5 @@
-
+import { CgVinyl } from 'react-icons/cg';
+import cv from '../Data/MAPHUTHA Current CV.pdf'
 import { useState } from 'react';
 
 const Header = () => {
@@ -7,6 +8,13 @@ const Header = () => {
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
     };
+    const [activeSection, setActiveSection] = useState("");
+
+    const handleClick = (section) => {
+      setActiveSection(section);
+      toggleMenu(); 
+    };
+  
 
     return (
         <>
@@ -19,23 +27,44 @@ const Header = () => {
                     <ul className={menuOpen ? "nav ul open" : ""}>
                         <li>
                             <button className="close-btn menu-close" onClick={toggleMenu}>
-                            <svg width="36px" height="36px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M14.5 9.50002L9.5 14.5M9.49998 9.5L14.5 14.5" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
-                                <path d="M22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C21.5093 4.43821 21.8356 5.80655 21.9449 8" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
-                                </svg>
+                            <svg fill="#ffffff" width="25px" height="25px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M222.927 580.115l301.354 328.512c24.354 28.708 20.825 71.724-7.883 96.078s-71.724 20.825-96.078-7.883L19.576 559.963a67.846 67.846 0 01-13.784-20.022 68.03 68.03 0 01-5.977-29.488l.001-.063a68.343 68.343 0 017.265-29.134 68.28 68.28 0 011.384-2.6 67.59 67.59 0 0110.102-13.687L429.966 21.113c25.592-27.611 68.721-29.247 96.331-3.656s29.247 68.721 3.656 96.331L224.088 443.784h730.46c37.647 0 68.166 30.519 68.166 68.166s-30.519 68.166-68.166 68.166H222.927z"/></svg>
                             </button>
                         </li>
-                        <li onClick={toggleMenu}><a href="#Hero">Home</a></li>
-                        <li onClick={toggleMenu}><a href="#About">About</a></li>
-                        <li onClick={toggleMenu}><a href="#Projects">Projects</a></li>
-                        <li onClick={toggleMenu}><a href="#Contact" className='contact-list'>Contact</a></li>
+                        <li
+                                onClick={() => handleClick("biography")}
+                                className={activeSection === "biography" ? "active" : ""}
+                            >
+                                <a href="#biography">Biography</a>
+                            </li>
+                            <li
+                                onClick={() => handleClick("featuredprojects")}
+                                className={activeSection === "featuredprojects" ? "active" : ""}
+                            >
+                                <a href="#featuredprojects">Featured Projects</a>
+                            </li>
+                            <li
+                                onClick={() => handleClick("technicalskills")}
+                                className={activeSection === "technicalskills" ? "active" : ""}
+                            >
+                                <a href="#technicalskills">Technical Skills</a>
+                            </li>
+                            <li
+                                onClick={() => handleClick("contact")}
+                                className={activeSection === "contact" ? "active" : ""}
+                            >
+                                <a href="#contact">Contact</a>
+                            </li>
+                        <li onClick={toggleMenu}><a href={cv} target="_blank" rel="noopener noreferrer" download className='contact-list'>Download CV</a></li>
+                      
                     </ul>
                 </nav>
                
                     <button className="menu-icon" onClick={toggleMenu}>
-                    <svg width="43px" height="43px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M16.19 2H7.81C4.17 2 2 4.17 2 7.81V16.18C2 19.83 4.17 22 7.81 22H16.18C19.82 22 21.99 19.83 21.99 16.19V7.81C22 4.17 19.83 2 16.19 2ZM17 17.25H7C6.59 17.25 6.25 16.91 6.25 16.5C6.25 16.09 6.59 15.75 7 15.75H17C17.41 15.75 17.75 16.09 17.75 16.5C17.75 16.91 17.41 17.25 17 17.25ZM17 12.75H7C6.59 12.75 6.25 12.41 6.25 12C6.25 11.59 6.59 11.25 7 11.25H17C17.41 11.25 17.75 11.59 17.75 12C17.75 12.41 17.41 12.75 17 12.75ZM17 8.25H7C6.59 8.25 6.25 7.91 6.25 7.5C6.25 7.09 6.59 6.75 7 6.75H17C17.41 6.75 17.75 7.09 17.75 7.5C17.75 7.91 17.41 8.25 17 8.25Z" fill="currentColor"/>
-                        </svg>
+                    <svg width="44px" height="44px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g id="Menu / Menu_Alt_02">
+                    <path id="Vector" d="M11 17H19M5 12H19M11 7H19" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </g>
+                    </svg>
                     </button>
                 
             </div>

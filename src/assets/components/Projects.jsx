@@ -12,11 +12,13 @@ const Projects = () => {
         <>
         <section className="hero-about">
             <div className="about-hero">
-                <p className="page-heading ">Projects</p>
+            <h5>PROJECTS</h5>
+                <p className="page-heading ">Featured Projects</p>
                 <div className="project-info">
                         {Projects.map((project) => (
                         <a href={project.link} target="_blank">  
                             <div className="project">
+                                
                                     <img
                                             src={project.image}
                                             loading="lazy"
@@ -34,8 +36,9 @@ const Projects = () => {
                          <div className="powered">
                          </div>
                  </div>
-
+                 <p className='projects-count'>+10 Projects</p>
             </div> 
+          
         </section>   
 
         

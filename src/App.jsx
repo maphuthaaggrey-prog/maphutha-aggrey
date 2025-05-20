@@ -5,6 +5,7 @@ import About from './assets/components/About';
 import Skills from './assets/components/Skills';
 import Projects from './assets/components/Projects';
 import Footer from './assets/components/Footer';
+import Certs from './assets/components/Certs';
 import { Helmet } from "react-helmet";
 
 function App() {
@@ -57,17 +58,18 @@ function App() {
       </Helmet>
       
       <Header />
-      <section id="Hero">
+      <section id="biography">
         <Hero />
       </section>
-      <section id="About">
-        <About />
-      </section>
-      <Skills />
-      <section id="Projects">
+      <section id="featuredprojects">
         <Projects />
       </section>
-      <section id="Contact">
+      <section id="technicalskills">
+      <Skills />
+      <Certs />
+      </section>
+
+      <section id="contact">
         <Footer />
       </section>
     </>
