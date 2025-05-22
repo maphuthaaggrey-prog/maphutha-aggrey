@@ -29,7 +29,7 @@ export const projects = [
         id: 3,
         project: "Geniux Moments",
         image: moments,
-        tools: "React Js - Javascript - CSS",
+        tools: "Next Js - CSS",
         link: "https://moments.geniux.co.za/collections/",
         type: "Collage of Contents",
         description: "This website is all about sharing the fun times and crazy moments that make life worth living. Check out our gallery of photos and relive the memories!",

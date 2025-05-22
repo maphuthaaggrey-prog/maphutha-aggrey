@@ -35,20 +35,20 @@ const Skills = () => {
           </div>
 
           <div className="skill">
-            <h3>VB.Net</h3>
+            <h3>Adobe Photoshop</h3>
             <div className="progress-bar">
-              <div className="progress" data-width="75%"></div>
+              <div className="progress" data-width="35%"></div>
             </div>
           </div>
           <div className="skill">
-            <h3>Git</h3>
+            <h3>Illustrator</h3>
             <div className="progress-bar">
-              <div className="progress" data-width="65%"></div>
+              <div className="progress" data-width="25%"></div>
             </div>
           </div>
 
           <div className="skill">
-            <h3>Github </h3>
+            <h3>Git & Github</h3>
             <div className="progress-bar">
               <div className="progress" data-width="55%"></div>
             </div>
@@ -57,36 +57,36 @@ const Skills = () => {
 
         <div className="developer-skills">
           <div className="skill">
-            <h3>HTML CSS</h3>
+            <h3>HTML5 & CSS</h3>
             <div className="progress-bar">
               <div className="progress" data-width="95%"></div>
             </div>
           </div>
 
           <div className="skill">
-            <h3>Javascript</h3>
+            <h3>JavaScript (ES6+)</h3>
             <div className="progress-bar">
               <div className="progress" data-width="68%"></div>
             </div>
           </div>
 
           <div className="skill">
-            <h3>PHP mySQL</h3>
+            <h3>PHP & MySQL</h3>
             <div className="progress-bar">
               <div className="progress" data-width="60%"></div>
             </div>
           </div>
 
           <div className="skill">
-            <h3>React.js</h3>
+            <h3>React & Next js</h3>
             <div className="progress-bar">
-              <div className="progress" data-width="55%"></div>
+              <div className="progress" data-width="50%"></div>
             </div>
           </div>
           <div className="skill">
-            <h3>Next js</h3>
+            <h3>SASS & SCSS</h3>
             <div className="progress-bar">
-              <div className="progress" data-width="15%"></div>
+              <div className="progress" data-width="75%"></div>
             </div>
           </div>
         </div>
