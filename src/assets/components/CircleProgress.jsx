@@ -8,7 +8,6 @@ const CircleProgress = ({ percentage }) => {
     <div className="circle-container">
       <svg className="circle-svg" viewBox="0 0 100 100">
         {dots.map((_, i) => {
-          // Adjust starting point to top (-90 degrees)
           const angle = (i / dots.length) * -360 - 90;
           const radians = (angle * Math.PI) / 180;
           const radius = 40;

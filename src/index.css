@@ -146,18 +146,10 @@ nav ul li a:hover {
                 color: var(--primary);
             }
 
-nav ul li a:active,
-nav ul li a:focus,
-section:target ~ nav ul li a[href="#Hero"], 
-section:target ~ nav ul li a[href="#About"],
-section:target ~ nav ul li a[href="#Projects"],
-#Hero:target ~ nav ul li a[href="#Hero"], 
-#About:target ~ nav ul li a[href="#About"],
-#Projects:target ~ nav ul li a[href="#Projects"] {
-    color: var(--primary); 
-
-
-}   
+            nav ul li.active a {
+                color: var(--primary);
+                font-weight: 700;
+            }  
 .contact-list {
     background-color: var(--primary);
     height: 30px;
@@ -693,8 +685,7 @@ footer .social-icons {
   }
   .footer-bottom {
     text-align: center;
-    padding-top: 1.5em;
-    font-size: 13px;
+    font-size: 12px;
     color: rgb(255, 255, 255);
   }
   .submit-btn:disabled {
