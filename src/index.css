@@ -227,8 +227,13 @@ svg {
     align-items: center;
     margin-bottom: -2em;
     font-weight: 600;
-
 }
+.available-for-work p:hover {
+    background-color: var(--primary);
+    color: white;
+    cursor: pointer;
+}
+
 h1 {
     font-family: 'Poppins';
     font-size: 27px;
@@ -256,12 +261,40 @@ h5 {
 .quality {
     border: 2px solid white;
     border-radius: 14px;
+
     display: flex;
     justify-content: center;
     align-items: center;
     height: 35px;
     width: 100px;
 }
+.card005 {
+    display: flex;
+    align-items: center;
+    background-color: rgba(85, 85, 85, 0.104);
+    margin-bottom: 1em;
+    margin-top: 1em;
+    padding: .8em;
+    border-radius: 10px;
+}
+.card005:hover {
+    background-color: rgba(85, 85, 85, 0.204); 
+}
+.card005 .icon svg {
+    color: white;
+
+}
+.card005 .details {
+    margin-left: 1em;
+    border-left: 1px solid grey;
+    height: auto;
+    padding-left: 1em;
+}
+.card005 .details p:nth-of-type(2) {
+    color: grey;
+    font-size: 11px
+}
+
 .social-icons {
     display: flex;
     align-items: center;
@@ -276,7 +309,7 @@ h5 {
 }
 .icon:hover {
     transform: scale(1.04);
-    filter: drop-shadow(0 2px 4px rgba(223, 62, 255, 0.5));
+    filter: drop-shadow(0 1px 1px rgba(223, 62, 255, 0.8));
 
 }
 .typing-container {
@@ -552,7 +585,6 @@ footer {
    width: 100%;
    margin: auto;
    padding-bottom: 19px;
-   margin-bottom: 3em;
 }
 .footer-cont form {
     width: 90%;
