@@ -71,13 +71,12 @@ const Footer = () => {
             action={contactScriptURL}
             method="POST"
           >
-                        <div className="available-for-work">
-                      <p><span></span>Avaibale for Work</p>
-                    </div>
+
             <p className="send-message">Let's Connect!</p>
             <p className="about-text">I’m currently open to junior-level opportunities in Front-End Development and UI/UX Design. If you’re looking for someone passionate about building clean, user-friendly web experiences — let’s connect!</p>
               <section>
-                    <a href="https://github.com/maphuthaaggrey-prog" target="_blank" className="card005">
+                <div className="div-footer">
+                <a href="https://github.com/maphuthaaggrey-prog" target="_blank" className="card005">
                         <div className="icon">
                             <svg className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="GitHubIcon"><path fill="currentColor" d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg>
                         </div>
@@ -95,6 +94,8 @@ const Footer = () => {
                             <p>https://www.linkedin.com/in/maphutha-chikane/</p>
                         </div>
                     </a>
+                </div>
+                <div className="div-footer">
                     <a href="mailto:maphuthaaggrey83@gmail.com" className="card005">
                         <div className="icon">
                           <svg className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="EmailRoundedIcon"><path fill="currentColor" d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-.4 4.25-7.07 4.42c-.32.2-.74.2-1.06 0L4.4 8.25c-.25-.16-.4-.43-.4-.72 0-.67.73-1.07 1.3-.72L12 11l6.7-4.19c.57-.35 1.3.05 1.3.72 0 .29-.15.56-.4.72z"></path></svg>
@@ -113,6 +114,7 @@ const Footer = () => {
                                   <p>+27 76 521 6787</p>
                           </div>
                     </a>
+                    </div>
                     <a href="https://www.google.com/maps/place/Maphutha+Street,+Ga-Masemola/@-24.5498581,29.6402589,77m/data=!3m1!1e3!4m6!3m5!1s0x1ec11030466df9b7:0x856e93c42983cef!8m2!3d-24.5497167!4d29.6404416!16s%2Fg%2F11svx0v5wk?entry=ttu&g_ep=EgoyMDI1MDUxNS4xIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D" target="_blank" className="card005">
                           <div className="icon">
                               <svg className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="LocationOnIcon"><path fill="currentColor" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path></svg>

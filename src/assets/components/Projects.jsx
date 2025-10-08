@@ -36,7 +36,6 @@ const Projects = () => {
                          <div className="powered">
                          </div>
                  </div>
-                 <p className='projects-count'>+10 Projects</p>
             </div> 
           
         </section>   

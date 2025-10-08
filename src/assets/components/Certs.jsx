@@ -12,7 +12,7 @@ const Projects = () => {
         <>
         <section className="hero-about">
             <div className="about-hero">
-            <h5>CERTIFICATES</h5>
+            <h5>MAIN CERTIFICATES</h5>
             <p className="page-heading" style={{ fontSize: '25px' }}>Licenses & certifications</p>
                 <div className="certificate-info">
                         {Certificates.map((certificate) => (
@@ -31,7 +31,6 @@ const Projects = () => {
                          <div className="powered">
                          </div>
                  </div>
-                 <p className='projects-count'>+10 Certificates</p>
             </div> 
         </section>   
 

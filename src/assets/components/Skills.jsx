@@ -40,17 +40,11 @@ const Skills = () => {
               <div className="progress" data-width="35%"></div>
             </div>
           </div>
-          <div className="skill">
-            <h3>Illustrator</h3>
-            <div className="progress-bar">
-              <div className="progress" data-width="25%"></div>
-            </div>
-          </div>
 
           <div className="skill">
             <h3>Git & Github</h3>
             <div className="progress-bar">
-              <div className="progress" data-width="55%"></div>
+              <div className="progress" data-width="65%"></div>
             </div>
           </div>
         </div>
@@ -73,22 +67,17 @@ const Skills = () => {
           <div className="skill">
             <h3>PHP & MySQL</h3>
             <div className="progress-bar">
-              <div className="progress" data-width="60%"></div>
+              <div className="progress" data-width="40%"></div>
             </div>
           </div>
 
           <div className="skill">
             <h3>React & Next js</h3>
             <div className="progress-bar">
-              <div className="progress" data-width="50%"></div>
+              <div className="progress" data-width="56%"></div>
             </div>
           </div>
-          <div className="skill">
-            <h3>SASS & SCSS</h3>
-            <div className="progress-bar">
-              <div className="progress" data-width="75%"></div>
-            </div>
-          </div>
+
         </div>
       </div>
     </section>
