@@ -5,7 +5,9 @@ import Skills from './assets/components/Skills';
 import Projects from './assets/components/Projects';
 import Footer from './assets/components/Footer';
 import Certs from './assets/components/Certs';
+import Chatbot from "./assets/components/Chatbot";
 import { Helmet } from "react-helmet";
+
 
 function App() {
   const [pageTitle, setPageTitle] = useState("Maphutha Aggrey");
@@ -23,18 +25,17 @@ function App() {
       }
     });
 
-    
     switch (currentSection) {
-      case "Hero":
+      case "biography":
         setPageTitle("Maphutha Aggrey");
-        break; 
-      case "About":
-        setPageTitle("About");
         break;
-      case "Projects":
+      case "featuredprojects":
         setPageTitle("Projects");
         break;
-      case "Contact":
+      case "technicalskills":
+        setPageTitle("Skills");
+        break;
+      case "contact":
         setPageTitle("Contact");
         break;
       default:
@@ -45,8 +46,27 @@ function App() {
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
+
+    // 👇 Animate sections on scroll
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+          } else {
+            entry.target.classList.remove('show');
+          }
+        });
+      },
+      { threshold: 0.05 } 
+    );
+
+    const hiddenSections = document.querySelectorAll('section');
+    hiddenSections.forEach(section => observer.observe(section));
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      observer.disconnect();
     };
   }, []);
 
@@ -57,20 +77,24 @@ function App() {
       </Helmet>
       
       <Header />
-      <section id="biography">
+
+      <section id="biography" className="hidden">
         <Hero />
       </section>
-      <section id="featuredprojects">
+
+      <section id="featuredprojects" className="hidden">
         <Projects />
       </section>
-      <section id="technicalskills">
-      <Skills />
-      <Certs />
+
+      <section id="technicalskills" className="hidden">
+        <Skills />
+        <Certs />
       </section>
 
-      <section id="contact">
+      <section id="contact" className="hidden">
         <Footer />
       </section>
+      <Chatbot />
     </>
   );
 }
