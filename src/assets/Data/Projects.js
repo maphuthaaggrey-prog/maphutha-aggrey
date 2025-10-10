@@ -23,7 +23,7 @@ export const projects = [
         link: "https://tinyurl.com/veteranbeatx",
         type: "Personal Music Website",
         tools: "React Js - Javascript - CSS",
-        description: `Collection of Veteran's latest beats, music productions, and projects. We are excited to share our art with you and hope you'll join us on this musical journey.`,
+        description: `Personal music website showcasing my latest beats, productions, and creative projects. Built with a responsive layout and clean interface. This project also represents my skills in combining creativity with modern web technologies to bring artistic ideas to life.`,
     },
    // {
      //   id: 3,

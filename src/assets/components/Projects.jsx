@@ -25,9 +25,11 @@ const Projects = () => {
                                             alt={project.project}
                                             className="project-image"
                                         />
-                                        <p className="project-name">{project.project}</p>
-                                        <p className="project-tools">{project.tools}</p>
-                                        <p className="project-type">{project.type}</p>
+                                        <div className="project-details">
+                                            <p className="project-name">{project.project}</p>
+                                            <p className="project-tools">{project.tools}</p>
+                                            <p className="project-type">{project.type}</p>
+                                        </div>
                                         <p className="project-desc">{project.description}</p>
                             </div>
                         </a>

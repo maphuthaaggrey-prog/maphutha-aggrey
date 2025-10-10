@@ -15,6 +15,11 @@ export default function Chatbot() {
   const responses = [
 
     {
+      keywords: ["Hi", "Hey", "Hello", "Sure"],
+      answer: `Hey, Is there anything you want to know about aggrey?`,
+      hint: ["Location", "Skills", "Education"],
+    },
+    {
       keywords: ["who are you", "who is he", "who is aggrey", "who"],
       answer: `My name is Aggrey Chikane Maphutha. I was born in Ga Masemola, Limpopo, and I am a passionate junior front-end developer and UI/UX designer. I specialize in creating responsive, user-friendly interfaces and constantly learning new technologies.`,
       hint: ["Location", "Skills", "Education"],
@@ -62,7 +67,7 @@ export default function Chatbot() {
       hint: ["Skills?", "Projects?", "Education?"],
     },
     {
-      keywords: ["education", "school", "college", "study", "course"],
+      keywords: ["education", "school", "college", "study", "course", "qualification"],
       answer: `I completed Grade 12 at Phoroane Secondary School from 2015 to 2020. 
       
       Currently, I am studying IT & Computer Sciences at Nkangala TVET College. I finished NQF Level 3 in 2024, focusing on system development, system analysis, graphic design, and computer hardware & software. I am now pursuing NQF Level 4, specializing in system development, web development (UI/UX), system analysis & design, and networking.`,
