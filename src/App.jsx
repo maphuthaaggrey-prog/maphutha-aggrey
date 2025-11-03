@@ -6,11 +6,51 @@ import Projects from './assets/components/Projects';
 import Footer from './assets/components/Footer';
 import Certs from './assets/components/Certs';
 import Chatbot from "./assets/components/Chatbot";
+import ProjectModal from './assets/components/ProjectModal';
 import { Helmet } from "react-helmet";
-
 
 function App() {
   const [pageTitle, setPageTitle] = useState("Maphutha Aggrey");
+  const [modalData, setModalData] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Function to open modal from any component
+  const openModal = (project) => {
+    setModalData(project);
+    setIsModalOpen(true);
+    document.body.style.overflow = 'hidden';
+  };
+
+  // Function to close modal
+  const closeModal = () => {
+    setModalData(null);
+    setIsModalOpen(false);
+    document.body.style.overflow = 'unset';
+  };
+
+  // Close modal when clicking outside content
+  const handleBackdropClick = (e) => {
+    if (e.target === e.currentTarget) {
+      closeModal();
+    }
+  };
+
+  // Close modal with Escape key
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === 'Escape') {
+        closeModal();
+      }
+    };
+
+    if (isModalOpen) {
+      document.addEventListener('keydown', handleEscape);
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+    };
+  }, [isModalOpen]);
 
   const handleScroll = () => {
     const sections = document.querySelectorAll("section");
@@ -47,7 +87,6 @@ function App() {
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
 
-    // 👇 Animate sections on scroll
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach(entry => {
@@ -83,7 +122,7 @@ function App() {
       </section>
 
       <section id="featuredprojects" className="hidden">
-        <Projects />
+        <Projects openModal={openModal} /> {/* Pass openModal as prop */}
       </section>
 
       <section id="technicalskills" className="hidden">
@@ -94,7 +133,14 @@ function App() {
       <section id="contact" className="hidden">
         <Footer />
       </section>
+
       <Chatbot />
+
+      <ProjectModal 
+            isOpen={isModalOpen}
+            project={modalData}
+            onClose={closeModal}
+        />
     </>
   );
 }

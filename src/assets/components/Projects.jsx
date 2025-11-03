@@ -1,6 +1,7 @@
 import { projects } from '../Data/Projects'
 import { useState, useEffect } from 'react'
-const Projects = () => {
+
+const Projects = ({ openModal }) => {
     const [Projects, setProjects] = useState([]);
 
     useEffect(() => {
@@ -8,44 +9,47 @@ const Projects = () => {
         setProjects(project);
     }, []);
 
+    const truncateDescription = (text, maxLength = 120) => {
+        if (text.length <= maxLength) return text;
+        return text.substring(0, maxLength) + '...';
+    };
+
     return ( 
         <>
-        <section className="hero-about">
-            <div className="about-hero">
-            <h5>PROJECTS</h5>
-                <p className="page-heading ">Featured Projects</p>
-                <div className="project-info">
-                        {Projects.map((project) => (
-                        <a href={project.link} target="_blank">  
-                            <div className="project">
-                                
+            <section className="hero-about">
+                <div className="about-hero">
+                    <h5>PROJECTS</h5>
+                    <p className="page-heading">Featured Projects</p>
+                    <div className="project-info">
+                        {Projects.map((project, index) => (
+                            <div 
+                                key={index}
+                                className="project-card" 
+                                onClick={() => openModal(project)}
+                            >  
+                                <div className="project">
                                     <img
-                                            src={project.image}
-                                            loading="lazy"
-                                            alt={project.project}
-                                            className="project-image"
-                                        />
-                                        <div className="project-details">
-                                            <p className="project-name">{project.project}</p>
-                                            <p className="project-tools">{project.tools}</p>
-                                            <p className="project-type">{project.type}</p>
-                                        </div>
-                                        <p className="project-desc">{project.description}</p>
+                                        src={project.image}
+                                        loading="lazy"
+                                        alt={project.project}
+                                        className="project-image"
+                                    />
+                                    <div className="project-details">
+                                        <p className="project-name">{project.project}</p>
+                                        <p className="project-type">{project.type}</p>
+                                    </div>
+                                    <p className="project-desc">
+                                        {truncateDescription(project.description)} <span>See Details</span>
+                                    </p>
+                                </div>
                             </div>
-                        </a>
-               
-                         ))}
-                         <div className="powered">
-                         </div>
-                 </div>
-            </div> 
-          
-        </section>   
-
-        
-        
+                        ))}
+                        <div className="powered"></div>
+                    </div>
+                </div> 
+            </section>   
         </>
-     );
+    );
 }
  
 export default Projects;
