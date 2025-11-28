@@ -7,6 +7,7 @@ import Footer from './assets/components/Footer';
 import Certs from './assets/components/Certs';
 import Chatbot from "./assets/components/Chatbot";
 import ProjectModal from './assets/components/ProjectModal';
+import CursorComponent from './assets/components/CursorComponent';
 import { Helmet } from "react-helmet";
 
 function App() {

@@ -628,6 +628,18 @@ h5 {
 .project-desc span:hover {
   font-weight: 600;
 }
+
+.cursor-follower {
+  position: fixed;
+  width: 15px;
+  height: 15px;
+  border: 2px solid grey;
+  border-radius: 6px;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  transition: transform 0.1s ease-out;
+}
 footer {
    width: 100%;
    margin: auto;

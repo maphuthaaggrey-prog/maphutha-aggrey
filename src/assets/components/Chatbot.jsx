@@ -60,7 +60,7 @@ export default function Chatbot() {
       hint: ["Portfolio?", "Skills?", "Projects?"],
     },
     {
-      keywords: ["profile", "about you", "about him", "foundation","passion", "what he do", "dealing with"],
+      keywords: ["profile", "about you", "about him", "foundation","passion", "what he do", "dealing with", "everything", "yourself"],
       answer: `I am a junior front-end developer and UI/UX designer with a strong foundation in creating responsive and user-friendly web interfaces. 
       
       I am passionate about coding, design, and creativity.`,
@@ -74,7 +74,7 @@ export default function Chatbot() {
       hint: ["Skills?", "Projects?", "Experience?"],
     },
     {
-      keywords: ["skills", "technology", "programming", "tools"],
+      keywords: ["skills", "technology", "programming", "tools", "stack",],
       answer: `My technical skills include HTML, CSS, JavaScript, React.js, Next.js, PHP, and MySQL. 
       
       I also use Figma and Adobe XD for UI/UX design. Additionally, I am familiar with Visual Studio, GitHub, Git, and I have completed courses in responsive web design and front-end development.`,

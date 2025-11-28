@@ -21,7 +21,7 @@ const Hero = () => {
                 <h1>Junior Front-End Developer and UI/UX Designer</h1>
                     <div className="hero-story scroll">
 
-                        <p className="about-text ">Aspiring software developer passionate about creating efficient and user-friendly web solutions. Currently completing a qualification in Information Technology and Computer Science at Nkangala TVET College.
+                        <p className="about-text ">Software developer passionate about creating efficient and user-friendly web solutions. Currently completing a qualification in Information Technology and Computer Science at Nkangala TVET College.
                         </p>
                     </div>
                     <div className="social-icons">
