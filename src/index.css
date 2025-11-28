@@ -604,9 +604,17 @@ h5 {
     padding: .4em 0;
     font-weight: 500;
 }
-.project-tools {
-    color: rgb(223, 223, 223);
-    font-weight: 500;
+
+.tool-badge {
+  border: 1px solid rgb(54, 54, 54);
+  padding: 3px 18px;
+  font-size: 12px;
+  font-weight: 400;
+  border-radius: 6px;
+  margin: 0 7px 10px 0;
+}
+.tool-badge:hover {
+  background-color: rgb(26, 26, 26) ;
 }
 .project-desc {
     color: rgb(192, 192, 192);
@@ -1120,7 +1128,6 @@ footer .social-icons {
 .modal-tools {
   color: var(--primary);
   margin-bottom: 10px;
-  font-size: 1em;
 }
 
 .modal-description {
@@ -1130,11 +1137,12 @@ footer .social-icons {
   font-size: 1.05em;
 }
 .modal-link {
-  color: #346FAA;
+  color: #575757;
+  font-size: 12px;
   padding-bottom: 1em;
 }
 .modal-actions {
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .modal-link-btn {

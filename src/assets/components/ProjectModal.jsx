@@ -59,7 +59,14 @@ const ProjectModal = ({ isOpen, project, onClose }) => {
 
                     <p className="modal-description">{project.description}</p>
 
-                    <p className="modal-tools"><strong>Tools:</strong> {project.tools}</p>
+                    <p className="modal-tools">
+                    {Array.isArray(project.tools) ? 
+                            project.tools.map((tool, index) => (
+                                <span key={index} className="tool-badge">{tool}</span>
+                            ))
+                            : project.tools
+                        }
+                    </p>
 
                     
                     {project.link && (
@@ -73,7 +80,7 @@ const ProjectModal = ({ isOpen, project, onClose }) => {
                             >
                                 Live site
                             </a>
-                            <a href={project.link} target="_blank" className="modal-link">{project.link}</a>
+
                         </div>
                     )}
                 </div>
