@@ -1,7 +1,23 @@
 import cv from '../Data/MAPHUTHA Current CV.pdf'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const Header = () => {
+
+    const [currentTime, setCurrentTime] = useState("");
+
+    useEffect(() => {
+      const timer = setInterval(() => {
+        const now = new Date();
+        const year = now.getFullYear();
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+        setCurrentTime(`${year} - ${hours}:${minutes}:${seconds}`);
+      }, 1000); 
+  
+      return () => clearInterval(timer); 
+    }, []);
+
     const [menuOpen, setMenuOpen] = useState(false);
     const [activeSection, setActiveSection] = useState("");
     const [showPopup, setShowPopup] = useState(false);
@@ -36,6 +52,7 @@ const Header = () => {
                     <div>
                         <a href="https://maphuthaaggrey-prog.github.io/maphutha-aggrey/">
                             <p className="logo">aggrey</p>
+                            <p className='time'>{currentTime}</p>
                         </a>
                     </div>
                     <ul className={menuOpen ? "nav ul open" : ""}>
