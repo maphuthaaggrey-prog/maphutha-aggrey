@@ -29,14 +29,14 @@ function App() {
     document.body.style.overflow = 'unset';
   };
 
-  // Close modal when clicking outside content
+
   const handleBackdropClick = (e) => {
     if (e.target === e.currentTarget) {
       closeModal();
     }
   };
 
-  // Close modal with Escape key
+
   useEffect(() => {
     const handleEscape = (e) => {
       if (e.key === 'Escape') {
