@@ -60,7 +60,7 @@ export default function Chatbot() {
       hint: ["Portfolio?", "Skills?", "Projects?"],
     },
     {
-      keywords: ["profile", "about you", "about him", "foundation","passion", "what he do", "dealing with", "everything", "yourself"],
+      keywords: ["profile", "about you", "about him", "foundation", "passion", "what he do", "dealing with", "everything", "yourself"],
       answer: `I am a junior front-end developer and UI/UX designer with a strong foundation in creating responsive and user-friendly web interfaces. 
       
       I am passionate about coding, design, and creativity.`,
@@ -70,7 +70,7 @@ export default function Chatbot() {
       keywords: ["education", "school", "college", "study", "course", "qualification"],
       answer: `I completed Grade 12 at Phoroane Secondary School from 2015 to 2020. 
       
-      Currently, I am studying IT & Computer Sciences at Nkangala TVET College. I finished NQF Level 3 in 2024, focusing on system development, system analysis, graphic design, and computer hardware & software. I am now pursuing NQF Level 4, specializing in system development, web development (UI/UX), system analysis & design, and networking.`,
+      I studied IT & Computer Sciences at Nkangala TVET College. I finished NQF Level 4 in 2025, focusing on system development, computer hardware & software, web development (UI/UX), system analysis & design, and networking.`,
       hint: ["Skills?", "Projects?", "Experience?"],
     },
     {
@@ -163,7 +163,7 @@ export default function Chatbot() {
         behavior: "smooth"
       });
     }
-  }, [messages]); 
+  }, [messages]);
 
   return (
     <>
@@ -178,22 +178,22 @@ export default function Chatbot() {
 
 
           <div className="chat-window" ref={chatWindowRef}>
-          <p>I’m your virtual assistant and will answer your questions as if I am Aggrey.</p>
+            <p>I’m your virtual assistant and will answer your questions as if I am Aggrey.</p>
             {messages.map((msg, i) => (
               <div key={i} className={`chat-row ${msg.sender}`}>
                 {msg.sender === "bot" && <img src={myPhoto} alt="bot" className="avatar" />}
                 <div className={`chat-bubble ${msg.sender}`}>
-                {msg.sender === "bot" ? renderTextWithLinks(msg.text) : msg.text}
+                  {msg.sender === "bot" ? renderTextWithLinks(msg.text) : msg.text}
                 </div>
               </div>
             ))}
-                      <div className="chat-hints">
-            {hints.map((hint, i) => (
-              <button key={i} className="hint-btn" onClick={() => handleSend(hint)}>
-                {hint}
-              </button>
-            ))}
-          </div>
+            <div className="chat-hints">
+              {hints.map((hint, i) => (
+                <button key={i} className="hint-btn" onClick={() => handleSend(hint)}>
+                  {hint}
+                </button>
+              ))}
+            </div>
           </div>
 
 
