@@ -55,7 +55,7 @@ Error generating stack: `+l.message+`
       
       I am passionate about coding, design, and creativity.`,hint:["Skills?","Projects?","Education?"]},{keywords:["education","school","college","study","course","qualification"],answer:`I completed Grade 12 at Phoroane Secondary School from 2015 to 2020. 
       
-      Currently, I am studying IT & Computer Sciences at Nkangala TVET College. I finished NQF Level 3 in 2024, focusing on system development, system analysis, graphic design, and computer hardware & software. I am now pursuing NQF Level 4, specializing in system development, web development (UI/UX), system analysis & design, and networking.`,hint:["Skills?","Projects?","Experience?"]},{keywords:["skills","technology","programming","tools","stack"],answer:`My technical skills include HTML, CSS, JavaScript, React.js, Next.js, PHP, and MySQL. 
+      I studied IT & Computer Sciences at Nkangala TVET College. I finished NQF Level 4 in 2025, focusing on system development, computer hardware & software, web development (UI/UX), system analysis & design, and networking.`,hint:["Skills?","Projects?","Experience?"]},{keywords:["skills","technology","programming","tools","stack"],answer:`My technical skills include HTML, CSS, JavaScript, React.js, Next.js, PHP, and MySQL. 
       
       I also use Figma and Adobe XD for UI/UX design. Additionally, I am familiar with Visual Studio, GitHub, Git, and I have completed courses in responsive web design and front-end development.`,hint:["Projects?","Portfolio?","Agency?"]},{keywords:["projects","app","website"],answer:`I have built several web applications and websites, all focused on providing a great user experience. 
       
