@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import myPhoto from "../images/linkedin-min.png";
+import myPhoto from "../images/IMG_7956.jpg";
 
 export default function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
