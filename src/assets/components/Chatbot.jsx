@@ -6,16 +6,18 @@ export default function Chatbot() {
   const [messages, setMessages] = useState([
     {
       sender: "bot",
-      text: "Hey, How are you? What do you want to know about Aggrey"
+      text: "Hey, How are you? What do you want to know about Aggrey",
+      timestamp: new Date(),
     },
   ]);
   const [input, setInput] = useState("");
   const [hints, setHints] = useState(["Who are you", "Your location", "What's your email"]);
+  const [isTyping, setIsTyping] = useState(false);
   const chatWindowRef = useRef(null);
-  const responses = [
 
+  const responses = [
     {
-      keywords: ["Hi", "Hey", "Hello", "Sure"],
+      keywords: ["hi", "hey", "hello", "sure"],
       answer: `Hey, Is there anything you want to know about aggrey?`,
       hint: ["Location", "Skills", "Education"],
     },
@@ -74,7 +76,7 @@ export default function Chatbot() {
       hint: ["Skills?", "Projects?", "Experience?"],
     },
     {
-      keywords: ["skills", "technology", "programming", "tools", "stack",],
+      keywords: ["skills", "technology", "programming", "tools", "stack"],
       answer: `My technical skills include HTML, CSS, JavaScript, React.js, Next.js, PHP, and MySQL. 
       
       I also use Figma and Adobe XD for UI/UX design. Additionally, I am familiar with Visual Studio, GitHub, Git, and I have completed courses in responsive web design and front-end development.`,
@@ -115,29 +117,70 @@ export default function Chatbot() {
     },
   ];
 
-  const handleSend = (text) => {
-    const userInput = text || input;
-    if (!userInput.trim()) return;
+  const formatTime = (date) => {
+    return date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+  };
 
-    const userMessage = { sender: "user", text: userInput };
-    const updatedMessages = [...messages, userMessage];
-    setMessages(updatedMessages);
-    setInput("");
-
-    const question = userInput.toLowerCase();
-    let botReply = "Try asking about projects, skills, or education.";
-    let newHints = ["Who are you?", "Location?", "Email?", "Portfolio?"];
+  const findBestMatch = (question) => {
+    const normalized = question.toLowerCase().trim();
+    let bestMatch = null;
+    let bestScore = 0;
 
     for (const item of responses) {
-      if (item.keywords.some((k) => question.includes(k))) {
-        botReply = item.answer;
-        newHints = item.hint;
-        break;
+      for (const keyword of item.keywords) {
+        if (normalized.includes(keyword)) {
+          const score = keyword.length;
+          if (score > bestScore) {
+            bestScore = score;
+            bestMatch = item;
+          }
+        }
       }
     }
 
-    setMessages([...updatedMessages, { sender: "bot", text: botReply }]);
-    setHints(newHints);
+    return bestMatch;
+  };
+
+  const handleSend = async (text) => {
+    const userInput = text || input;
+    if (!userInput.trim() || isTyping) return;
+
+    const userMessage = {
+      sender: "user",
+      text: userInput,
+      timestamp: new Date(),
+    };
+    setMessages((prev) => [...prev, userMessage]);
+    setInput("");
+    setIsTyping(true);
+
+    const match = findBestMatch(userInput);
+    const delay = 600 + Math.random() * 800;
+
+    setTimeout(() => {
+      const botReply = match
+        ? match.answer
+        : "I'm not sure about that. Try asking about my skills, projects, education, or experience.";
+      const newHints = match ? match.hint : ["Skills", "Projects", "Education"];
+
+      setMessages((prev) => [
+        ...prev,
+        { sender: "bot", text: botReply, timestamp: new Date() },
+      ]);
+      setHints(newHints);
+      setIsTyping(false);
+    }, delay);
+  };
+
+  const handleClear = () => {
+    setMessages([
+      {
+        sender: "bot",
+        text: "Chat cleared! What would you like to know about Aggrey?",
+        timestamp: new Date(),
+      },
+    ]);
+    setHints(["Who are you", "Your location", "What's your email"]);
   };
 
   const renderTextWithLinks = (text) => {
@@ -152,41 +195,70 @@ export default function Chatbot() {
         part
       )
     );
-  }
-
-
+  };
 
   useEffect(() => {
     if (chatWindowRef.current) {
       chatWindowRef.current.scrollTo({
         top: chatWindowRef.current.scrollHeight,
-        behavior: "smooth"
+        behavior: "smooth",
       });
     }
-  }, [messages]);
+  }, [messages, isTyping]);
 
   return (
     <>
-      <button className="chat-toggle" onClick={() => setIsOpen(!isOpen)}>Chat</button>
+      <button className="chat-toggle" onClick={() => setIsOpen(!isOpen)} aria-label="Toggle chat">
+        {!isOpen && <span className="chat-pulse" aria-hidden="true" />}
+        {isOpen ? (
+          <svg viewBox="0 0 24 24" width="28" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        ) : (
+          <svg viewBox="0 0 24 24" width="28" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+          </svg>
+        )}
+      </button>
 
       {isOpen && (
         <div className="chat-popup">
           <div className="chat-header">
             <h4>Aggrey Chatbot</h4>
-            <button onClick={() => setIsOpen(false)}>✖</button>
+            <div className="chat-header-actions">
+              <button onClick={handleClear} title="Clear chat">
+                <svg viewBox="0 0 24 24" width="18" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M3 6h18M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2m3 0v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6h14z" />
+                </svg>
+              </button>
+              <button onClick={() => setIsOpen(false)} title="Close">
+                ✖
+              </button>
+            </div>
           </div>
 
-
           <div className="chat-window" ref={chatWindowRef}>
-            <p>I’m your virtual assistant and will answer your questions as if I am Aggrey.</p>
+            <p>I&apos;m your virtual assistant and will answer your questions as if I am Aggrey.</p>
             {messages.map((msg, i) => (
-              <div key={i} className={`chat-row ${msg.sender}`}>
+              <div key={i} className={`chat-row ${msg.sender} chat-message`}>
                 {msg.sender === "bot" && <img src={myPhoto} alt="bot" className="avatar" />}
                 <div className={`chat-bubble ${msg.sender}`}>
                   {msg.sender === "bot" ? renderTextWithLinks(msg.text) : msg.text}
+                  <span className="chat-timestamp">{formatTime(msg.timestamp)}</span>
                 </div>
               </div>
             ))}
+            {isTyping && (
+              <div className="chat-row bot chat-message">
+                <img src={myPhoto} alt="bot" className="avatar" />
+                <div className="chat-bubble bot typing-indicator">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+            )}
             <div className="chat-hints">
               {hints.map((hint, i) => (
                 <button key={i} className="hint-btn" onClick={() => handleSend(hint)}>
@@ -194,9 +266,8 @@ export default function Chatbot() {
                 </button>
               ))}
             </div>
+            <div className="hints-separator" />
           </div>
-
-
 
           <div className="chat-input">
             <input
@@ -205,8 +276,21 @@ export default function Chatbot() {
               onChange={(e) => setInput(e.target.value)}
               placeholder="Ask anything"
               onKeyDown={(e) => e.key === "Enter" && handleSend()}
+              disabled={isTyping}
             />
-            <button onClick={() => handleSend()}><svg viewBox="0 0 24 24" width="27" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6.99811 10.2467L7.43298 11.0077C7.70983 11.4922 7.84825 11.7344 7.84825 12C7.84825 12.2656 7.70983 12.5078 7.43299 12.9923L7.43298 12.9923L6.99811 13.7533C5.75981 15.9203 5.14066 17.0039 5.62348 17.5412C6.1063 18.0785 7.24961 17.5783 9.53623 16.5779L15.8119 13.8323C17.6074 13.0468 18.5051 12.654 18.5051 12C18.5051 11.346 17.6074 10.9532 15.8119 10.1677L9.53624 7.4221C7.24962 6.42171 6.1063 5.92151 5.62348 6.45883C5.14066 6.99615 5.75981 8.07966 6.99811 10.2467Z" stroke="#000000" stroke-width="2"></path> </g></svg></button>
+            <button onClick={() => handleSend()} disabled={isTyping}>
+              <svg viewBox="0 0 24 24" width="27" fill="#000000" xmlns="http://www.w3.org/2000/svg">
+                <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+                <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path
+                    d="M6.99811 10.2467L7.43298 11.0077C7.70983 11.4922 7.84825 11.7344 7.84825 12C7.84825 12.2656 7.70983 12.5078 7.43299 12.9923L7.43298 12.9923L6.99811 13.7533C5.75981 15.9203 5.14066 17.0039 5.62348 17.5412C6.1063 18.0785 7.24961 17.5783 9.53623 16.5779L15.8119 13.8323C17.6074 13.0468 18.5051 12.654 18.5051 12C18.5051 11.346 17.6074 10.9532 15.8119 10.1677L9.53624 7.4221C7.24962 6.42171 6.1063 5.92151 5.62348 6.45883C5.14066 6.99615 5.75981 8.07966 6.99811 10.2467Z"
+                    stroke="#000000"
+                    strokeWidth="2"
+                  ></path>
+                </g>
+              </svg>
+            </button>
           </div>
         </div>
       )}

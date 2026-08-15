@@ -98,7 +98,7 @@ function App() {
           }
         });
       },
-      { threshold: 0.05 } 
+      { threshold: 0.05 }
     );
 
     const hiddenSections = document.querySelectorAll('section');
@@ -115,7 +115,7 @@ function App() {
       <Helmet>
         <title>{pageTitle}</title>
       </Helmet>
-      
+
       <Header />
 
       <section id="biography" className="hidden">
@@ -123,7 +123,7 @@ function App() {
       </section>
 
       <section id="featuredprojects" className="hidden">
-        <Projects openModal={openModal} /> {/* Pass openModal as prop */}
+        <Projects openModal={openModal} />
       </section>
 
       <section id="technicalskills" className="hidden">
@@ -137,11 +137,11 @@ function App() {
 
       <Chatbot />
 
-      <ProjectModal 
-            isOpen={isModalOpen}
-            project={modalData}
-            onClose={closeModal}
-        />
+      <ProjectModal
+        isOpen={isModalOpen}
+        project={modalData}
+        onClose={closeModal}
+      />
     </>
   );
 }
