@@ -22,7 +22,6 @@ function App() {
     document.body.style.overflow = 'hidden';
   };
 
-  // Function to close modal
   const closeModal = () => {
     setModalData(null);
     setIsModalOpen(false);
