@@ -25,7 +25,7 @@ export const projects = [
         id: 2,
         project: "Veteran Beatx",
         image: veteranbeatx,
-        link: "https://veteranbeatx.aavenagency.co.za/",
+        link: "https://maphuthaaggrey-prog.github.io/beatx/",
         type: "Personal Music Website",
         tools: [
             `React js`,
@@ -51,7 +51,7 @@ export const projects = [
         id: 4,
         project: "Contella",
         image: contella,
-        link: "https://contella.aavenagency.co.za/",
+        link: "https://maphuthaaggrey-prog.github.io/contella/",
         type: "Blog - Video Streaming",
         tools: [
             `React js`,
@@ -64,7 +64,7 @@ export const projects = [
         id: 5,
         project: "Respect My Hustle",
         image: respectmyhustle,
-        link: "https://www.respectmyhustle.co.za/",
+        link: "https://maphuthaaggrey-prog.github.io/freeze/",
         type: "Personal Art Portfolio",
         tools: [
             `React js`,
@@ -77,7 +77,7 @@ export const projects = [
         id: 6,
         project: "Aaven",
         image: aaven,
-        link: "https://www.aavenagency.co.za/",
+        link: "https://maphuthaaggrey-prog.github.io/aaven/",
         type: "Web Development Agency",
         tools: [
             `React js`,
@@ -85,19 +85,6 @@ export const projects = [
             `CSS`,
         ],
         description: `Aaven is a creative web development studio focused on building modern, impactful digital experiences for South African creators and businesses. We design, develop, and launch online experiences tailored for the new generation.`,
-    },
-    {
-        id: 7,
-        project: "EMM Services",
-        image: emm,
-        link: "https://www.emm-services.co.za/",
-        type: "Business Portfolio",
-        tools: [
-            `React js`,
-            `Javascript`,
-            `CSS`,
-        ],
-        description: `A contractor in South Africa that works in sectors like water management and civil construction. The goal was to modernize their online presence with a professional, fast, and accessible website to help them attract more public and private sector clients.`,
     },
 
 ]
